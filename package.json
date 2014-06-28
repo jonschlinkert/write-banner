@@ -1,0 +1,45 @@
+{
+  "name": "write-banner",
+  "description": "Add a banner to any file.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/jonschlinkert/write-banner",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/write-banner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/write-banner/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/write-banner/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "banner",
+    "banners",
+    "comments",
+    "comment"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "*",
+    "verb": "~0.2.6"
+  },
+  "dependencies": {
+    "add-banner": "^0.1.0",
+    "write": "^0.1.1"
+  }
+}
