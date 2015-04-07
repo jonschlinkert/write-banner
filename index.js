@@ -13,23 +13,23 @@ var write = require('write');
 var strip = require('strip-banner');
 var banner = require('add-banner');
 
-var resolve = function(filepath) {
-  return path.resolve(process.cwd(), filepath);
+module.exports = function writeBanner(src, dest, opts) {
+  if (typeof dest === 'object') {
+    opts = dest;
+    dest = src;
+  }
+  if (!dest) {
+    opts = {};
+    dest = src;
+  }
+  var str = strip(read(src));
+  write.sync(dest, banner(opts) + str);
 };
+
+function resolve(filepath) {
+  return path.resolve(process.cwd(), filepath);
+}
 
 function read(filepath) {
   return fs.readFileSync(resolve(filepath), 'utf8');
 }
-
-module.exports = function writeBanner(src, dest, options) {
-  if (typeof dest === 'object') {
-    options = dest;
-    dest = src;
-  }
-  if (!dest) {
-    options = {};
-    dest = src;
-  }
-  var str = strip(read(src));
-  write.sync(dest, banner(options) + str);
-};
