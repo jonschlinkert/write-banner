@@ -23,7 +23,7 @@ module.exports = function writeBanner(src, dest, opts) {
     dest = src;
   }
   var str = strip(read(src));
-  write.sync(dest, banner(opts) + str);
+  write.sync(dest, banner(src, opts) + str);
 };
 
 function resolve(filepath) {
